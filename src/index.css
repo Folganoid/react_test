@@ -62,6 +62,59 @@ header .shop-cart {
   min-height: 100px;
   background-color: #bbb;
   z-index: 1000;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+header .shop-cart .item {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .item img {
+  width: 70px;
+  height: 70px;
+  background-color: purple;
+  float: left;
+  margin-right: 20px;
+}
+
+header .shop-cart .item h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+header .shop-cart .item p {
+  color: green;
+  font-weight: 600;
+}
+
+header .shop-cart .item .delete-icon {
+  color: #ca5252;
+  float: right;
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+  transition: all 500ms;
+}
+
+header .shop-cart .item .delete-icon:hover {
+  color: red;
+  transform: scale(1.5);
+}
+
+header .shop-cart .empty h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .summa {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 header .presentation {
