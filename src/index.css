@@ -42,6 +42,28 @@ header ul.nav li:hover {
   transition: 500ms;
 }
 
+header .shop-cart-button {
+  float: right;
+  cursor: pointer;
+  transition: color 500ms ease;
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+  color: red;
+  transform: scale(1.5);
+}
+
+header .shop-cart {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  min-height: 100px;
+  background-color: #bbb;
+  z-index: 1000;
+}
+
 header .presentation {
   margin: 50px 0;
   background: url('https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk5Ni0wMDlfMS1rcm9pcjRkay5qcGc.jpg');
