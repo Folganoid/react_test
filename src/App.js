@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Items from "./components/Items";
 import Categories from "./components/Categories";
 import ShowFullItem from "./components/ShowFullItem";
+import Counter from "./components/Counter";
 
 class App extends React.Component {
   constructor(props) {
@@ -87,6 +88,7 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Header onDelete={this.deleteOrder} orders={this.state.orders}/>
+        <Counter />
         <Categories chooseCategory={this.chooseCategory}/>
         <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder}/>
         {this.state.showFullItem && <ShowFullItem item={this.state.fullItem}/>}
