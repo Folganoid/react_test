@@ -2,19 +2,19 @@ const defaultState = {
     customers: [],
 }
 
+const ADD_CUSTOMER = "ADD_CUSTOMER";
+const GET_CUSTOMER = "GET_CUSTOMER";
+
 export const customerReducer = (state = defaultState, action) => {
-    let tmp;
     switch (action.type) {
-      case "ADD_CUSTOMER":
-        tmp = state.customers;
-        tmp.push(action.payload);
-        return {...state, customers: tmp}
-      case "GET_CUSTOMER":
-        tmp = state.customers;
-        tmp.pop();
-        return {...state, customers: tmp}
-  
+      case ADD_CUSTOMER:
+        return {...state, customers: [...state.customers, action.payload]}
+      case GET_CUSTOMER:
+        return {...state, customers: [...state.customers.filter(c => c.id !== action.payload.id)]}
       default: 
         return state
     }
-  }
+}
+
+export const addCustomerAction = (payload) => ({type: ADD_CUSTOMER, payload});
+export const getCustomerAction = (payload) => ({type: GET_CUSTOMER, payload});
