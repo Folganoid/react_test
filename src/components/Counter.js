@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { fetchCustomers } from '../asyncAction/customers';
 import { addCustomerAction, getCustomerAction } from '../store/customerReducer';
 
 export default function Counter() {
@@ -34,8 +35,8 @@ export default function Counter() {
         <div style={{display: "flex", margin: "10px", height: "30px", width: "30px"}}>
             <button onClick={() => getCash()}>(-)</button>
             <button onClick={() => addCash()}>(+)</button>
-            <button onClick={() => getCustomer()}>(-C)</button>
-            <button onClick={() => addCustomer(prompt('add name'))}>(+C)</button>
+            <button onClick={() => addCustomer(prompt('add name'))}>ADD CUSTOMER</button>
+            <button onClick={() => dispatch(fetchCustomers())}>ADD MANY USERS</button>
         </div>
         <div>{customers.length === 0 ? "empty" : 
           customers.map(customer => 
