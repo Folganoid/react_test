@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 export default function Counter() {
 
   const dispatch = useDispatch();
-  const cash = useSelector(state => state.cash);
+  const cash = useSelector(state => state.cash.cash);
   
   const addCash = () => {
     dispatch({type: "ADD_CASH", payload: 5})
