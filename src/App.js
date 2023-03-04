@@ -1,5 +1,7 @@
 import { useState } from "react";
 import PostList from "./components/PostList";
+import MyButton from "./components/UI/button/MyButton";
+import MyInput from "./components/UI/input/MyInput";
 import './styles/App.css';
 
 function App() {
@@ -10,16 +12,14 @@ function App() {
     {id: 3, title: 'Go', body: 'gogogo'}
   ])
 
-  const [posts2, setPosts2] = useState([
-    {id: 1, title: 'JS2', body: 'jjjj2'},
-    {id: 2, title: 'TS2', body: 'ttt2'},
-    {id: 3, title: 'Go2', body: 'gogogo2'}
-  ])
-
   return (
     <div className="App">
+      <form>
+        <MyInput type="text" placeholder="post name" />
+        <MyInput type="text" placeholder="post desc" />
+        <MyButton disabled>Add post</MyButton>
+      </form>
       <PostList posts={posts} title="Post List #1"/>
-      <PostList posts={posts2} title="Post List #2"/>
     </div>
   );
 }

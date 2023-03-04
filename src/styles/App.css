@@ -10,7 +10,7 @@
     flex-wrap: wrap;
 }
 
-.post {
+.post__content {
     min-width: 800px;
     display: flex;
     padding: 15px;
