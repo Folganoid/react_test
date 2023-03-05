@@ -12,20 +12,17 @@ function App() {
     {id: 3, title: 'Go', body: 'gogogo'}
   ])
 
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [post, setPost] = useState({title: '', body: ''});
 
   const addNewPost = (e) => {
     e.preventDefault();
     const newPost = {
       id: Date.now(),
-      title,
-      body
+      title: post.title,
+      body: post.body
     }
     setPosts([...posts, newPost])
-    setTitle('');
-    setBody('');
-
+    setPost({title: '', body: ''});
   }
 
   return (
@@ -34,14 +31,14 @@ function App() {
         <MyInput 
           type="text"
           placeholder="post name"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
+          value={post.title}
+          onChange={e => setPost({...post, title: e.target.value})}
         />
         <MyInput
-          value={body}
+          value={post.body}
           type="text"
           placeholder="post desc"
-          onChange={e => setBody(e.target.value)}
+          onChange={e => setPost({...post, body: e.target.value})}
         />
         <MyButton onClick={addNewPost}>Add post</MyButton>
       </form>
