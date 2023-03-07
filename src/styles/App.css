@@ -68,3 +68,8 @@
     margin-left: auto;
     padding: 10px;
 }
+
+.post__btns {
+    display: flex;
+    flex-wrap: nowrap;
+}
